@@ -135,13 +135,13 @@ foreach($results as $result)
 											<td><?php echo htmlentities($result->ContactNumber);?></td>
 											<td><?php echo htmlentities($result->Message);?></td>
 											<td><?php echo htmlentities($result->PostingDate);?></td>
+                                            <td><a href="manage-contactusquery.php?del=<?php echo $result->id;?>" onclick="return confirm('Do you want to delete');"><i class="fa fa-close"></i></a></td>
 																<?php if($result->status==1)
 {
 	?><td>Read</td>
 <?php } else {?>
 
-<td><a href="manage-conactusquery.php?eid=<?php echo htmlentities($result->id);?>" onclick="return confirm('Do you really want to read')" >Pending</a>
-</td>
+<td><a href="manage-contactusquery.php?del=<?php echo $result->id;?>" onclick="return confirm('Do you want to delete');"><i class="fa fa-close"></i></a></td>
 <?php } ?>
 										</tr>
 										<?php $cnt=$cnt+1; }} ?>
